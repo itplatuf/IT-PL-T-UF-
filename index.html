@@ -86,7 +86,7 @@
     .ticks { list-style: none; padding: 0; margin: 25px 0; }
     .ticks li { color: #d3d7d8; padding: 5px 0 5px 27px; position: relative; }
     .ticks li:before { content: "✓"; position: absolute; left: 0; color: #dfe1df; font-weight: 900; }
-    .screw { position: absolute; z-index: 2; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f7f7f4, #777e81 60%, #24282a); box-shadow: 0 1px 4px #000; }
+    .screw { position: absolute; z-index: 2; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f7f7f4, #777e81 60%, #24282a); box-shadow: 0 1px 4px #00000033; }
     .s1 { top: 17%; left: 15%; } .s2 { top: 12%; right: 12%; } .s3 { bottom: 15%; left: 24%; } .s4 { bottom: 12%; right: 7%; }
     .product-note { position: absolute; bottom: 16px; left: 18px; color: #d7dcdd; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
     .about { background: linear-gradient(100deg, #171a1c, #0c0e10); }
@@ -257,7 +257,7 @@
       const subject = encodeURIComponent("Beställningsförfrågan – IT PLÅT UF");
       const body = encodeURIComponent("Namn: " + name + "\nE-post: " + email + "\n\nMeddelande:\n" + message);
       // Ändra mottagaradressen till företagets riktiga e-postadress.
-      window.location.href = "mailto:tunstromisac@gmail.com?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:itplatuf@gmail.com?subject=" + subject + "&body=" + body;
     });
   </script>
 </body>
