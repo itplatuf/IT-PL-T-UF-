@@ -224,16 +224,18 @@
           <h2>Kontakt & beställning</h2>
           <p class="intro">Intresserad av ett väderskydd? Enkelmodellen kostar 180 kr och dubbelmodellen 200 kr. Kontakta oss för att beställa eller få information om leverans.</p>
           <div class="contact-list">
-            <!-- Företagets kontaktuppgifter -->
             <p>✉ <a href="mailto:itplatuf@gmail.com">itplatuf@gmail.com</a></p>
             <p>◎ <a href="https://www.instagram.com/itplatuf/" target="_blank" rel="noopener noreferrer">@itplatuf</a></p>
           </div>
         </div>
-        <form id="contactForm">
+        <form id="contactForm" method="POST" action="https://formsubmit.co/ajax/itplatuf@gmail.com" accept-charset="UTF-8">
+          <input type="hidden" name="_subject" value="Beställningsförfrågan – IT PLÅT UF">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <label><span class="section-kicker">Namn</span><input name="name" autocomplete="name" required placeholder="Ditt namn"></label>
           <label><span class="section-kicker">E-post</span><input name="email" type="email" autocomplete="email" required placeholder="namn@exempel.se"></label>
           <label style="grid-column:1/-1"><span class="section-kicker">Meddelande</span><textarea name="message" required placeholder="Hej! Jag vill veta mer om väderskyddet..."></textarea></label>
-          <p class="form-help">Formuläret öppnar ditt e-postprogram med meddelandet ifyllt. Inget skickas automatiskt från hemsidan.</p>
+          <p class="form-help">Formuläret skickar mejlet via vår kontaktservice. Du kommer att få ett bekräftelsemeddelande från tjänsten.</p>
           <button class="button" type="submit">Skapa beställningsförfrågan ↗</button>
         </form>
       </div>
@@ -248,17 +250,6 @@
   </footer>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const name = String(data.get("name") || "").trim();
-      const email = String(data.get("email") || "").trim();
-      const message = String(data.get("message") || "").trim();
-      const subject = encodeURIComponent("Beställningsförfrågan – IT PLÅT UF");
-      const body = encodeURIComponent("Namn: " + name + "\nE-post: " + email + "\n\nMeddelande:\n" + message);
-      // Ändra mottagaradressen till företagets riktiga e-postadress.
-      window.location.href = "mailto:itplatuf@gmail.com?subject=" + subject + "&body=" + body;
-    });
   </script>
 </body>
 </html>
